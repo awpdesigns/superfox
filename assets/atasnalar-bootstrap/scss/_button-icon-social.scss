@@ -1,0 +1,71 @@
+.social-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: $spacer;
+}
+
+.btn-icon {
+    @include border-radius($border-radius);
+    padding: $spacer * .5;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-facebook {
+    background-color: var(--#{$prefix}blue-100);
+
+    &:hover {
+        background-color: var(--#{$prefix}blue);
+    }
+
+    > * {
+        color: var(--#{$prefix}blue);
+    }
+}
+
+.btn-twitter {
+    background-color: var(--#{$prefix}cyan-100);
+
+    &:hover {
+        background-color: var(--#{$prefix}cyan);
+    }
+
+    > * {
+        color: var(--#{$prefix}cyan);
+    }
+}
+
+.btn-google, .btn-youtube {
+    background-color: var(--#{$prefix}red-100);
+
+    &:hover {
+        background-color: var(--#{$prefix}red);
+    }
+
+    > * {
+        color: var(--#{$prefix}red);
+    }
+}
+
+.btn-instagram {
+    background-color: var(--#{$prefix}purple-100);
+
+    &:hover {
+        background-color: var(--#{$prefix}purple);
+    }
+
+    > * {
+        color: var(--#{$prefix}purple);
+    }
+}
+
+.btn-facebook:hover>*,
+.btn-twitter:hover>*,
+.btn-google:hover>*,
+.btn-youtube:hover>*,
+.btn-instagram:hover>* {
+    color: var(--#{$prefix}white);
+}

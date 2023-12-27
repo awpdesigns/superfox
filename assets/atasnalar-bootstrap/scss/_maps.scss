@@ -1,0 +1,204 @@
+// Re-assigned maps
+//
+// Placed here so that others can override the default Sass maps and see automatic updates to utilities and more.
+// scss-docs-start colors-rgb
+$colors-rgb: map-loop($colors, to-rgb, "$value") !default;
+// scss-docs-start theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
+// scss-docs-end theme-colors-rgb
+
+$theme-colors-text: (
+  "primary": $primary-text,
+  "secondary": $secondary-text,
+  "tertiary": $tertiary-text,
+  "success": $success-text,
+  "info": $info-text,
+  "warning": $warning-text,
+  "danger": $danger-text,
+  "light": $light-text,
+  "dark": $dark-text,
+) !default;
+
+$colors-text: (
+  "blue": $blue-text,
+  "indigo": $indigo-text,
+  "purple": $purple-text,
+  "pink": $pink-text,
+  "red": $red-text,
+  "orange": $orange-text,
+  "yellow": $yellow-text,
+  "green": $green-text,
+  "teal": $teal-text,
+  "cyan": $cyan-text,
+) !default;
+
+$theme-colors-bg-subtle: (
+  "primary": $primary-bg-subtle,
+  "secondary": $secondary-bg-subtle,
+  "tertiary": $tertiary-bg-subtle,
+  "success": $success-bg-subtle,
+  "info": $info-bg-subtle,
+  "warning": $warning-bg-subtle,
+  "danger": $danger-bg-subtle,
+  "light": $light-bg-subtle,
+  "dark": $dark-bg-subtle,
+) !default;
+
+$colors-bg-subtle: (
+  "blue": $blue-bg-subtle,
+  "indigo": $indigo-bg-subtle,
+  "purple": $purple-bg-subtle,
+  "pink": $pink-bg-subtle,
+  "red": $red-bg-subtle,
+  "orange": $orange-bg-subtle,
+  "yellow": $yellow-bg-subtle,
+  "green": $green-bg-subtle,
+  "teal": $teal-bg-subtle,
+  "cyan": $cyan-bg-subtle,
+) !default;
+
+$theme-colors-border-subtle: (
+  "primary": $primary-border-subtle,
+  "secondary": $secondary-border-subtle,
+  "tertiary": $tertiary-border-subtle,
+  "success": $success-border-subtle,
+  "info": $info-border-subtle,
+  "warning": $warning-border-subtle,
+  "danger": $danger-border-subtle,
+  "light": $light-border-subtle,
+  "dark": $dark-border-subtle,
+) !default;
+
+$colors-border-subtle: (
+  "blue": $blue-border-subtle,
+  "indigo": $indigo-border-subtle,
+  "purple": $purple-border-subtle,
+  "pink": $pink-border-subtle,
+  "red": $red-border-subtle,
+  "orange": $orange-border-subtle,
+  "yellow": $yellow-border-subtle,
+  "green": $green-border-subtle,
+  "teal": $teal-border-subtle,
+  "cyan": $cyan-border-subtle,
+) !default;
+
+// Utilities maps
+//
+// Extends the default `$theme-colors` maps to help create our utilities.
+
+// Come v6, we'll de-dupe these variables. Until then, for backward compatibility, we keep them to reassign.
+// scss-docs-start utilities-colors
+$utilities-colors: $theme-colors-rgb !default;
+// scss-docs-end utilities-colors
+
+// scss-docs-start all-colors
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans, $primarys, $secondarys, $tertiarys, $successs, $infos, $warnings, $dangers);
+// scss-docs-end all-colors
+
+// scss-docs-start utilities-all-colors
+$utilities-all-colors: $all-colors !default;
+
+// scss-docs-start utilities-text-colors
+$utilities-text: map-merge(
+  $utilities-colors,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body": to-rgb($body-color)
+  )
+) !default;
+$utilities-text-colors: map-loop($utilities-text, rgba-css-var, "$key", "text") !default;
+
+$utilities-text-emphasis-colors: (
+  "primary-emphasis": var(--#{$prefix}primary-text),
+  "secondary-emphasis": var(--#{$prefix}secondary-text),
+  "tertiary-emphasis": var(--#{$prefix}tertiary-text),
+  "success-emphasis": var(--#{$prefix}success-text),
+  "info-emphasis": var(--#{$prefix}info-text),
+  "warning-emphasis": var(--#{$prefix}warning-text),
+  "danger-emphasis": var(--#{$prefix}danger-text),
+  "light-emphasis": var(--#{$prefix}light-text),
+  "dark-emphasis": var(--#{$prefix}dark-text),
+  "blue-emphasis": var(--#{$prefix}blue-text),
+  "indigo-emphasis": var(--#{$prefix}indigo-text),
+  "purple-emphasis": var(--#{$prefix}purple-text),
+  "pink-emphasis": var(--#{$prefix}pink-text),
+  "red-emphasis": var(--#{$prefix}red-text),
+  "orange-emphasis": var(--#{$prefix}orange-text),
+  "yellow-emphasis": var(--#{$prefix}yellow-text),
+  "green-emphasis": var(--#{$prefix}green-text),
+  "teal-emphasis": var(--#{$prefix}teal-text),
+  "cyan-emphasis": var(--#{$prefix}cyan-text)
+) !default;
+// scss-docs-end utilities-text-colors
+
+// scss-docs-start utilities-bg-colors
+$utilities-bg: map-merge(
+  $utilities-colors,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body": to-rgb($body-bg)
+  )
+) !default;
+$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !default;
+
+$utilities-bg-subtle: (
+  "primary-subtle": var(--#{$prefix}primary-bg-subtle),
+  "secondary-subtle": var(--#{$prefix}secondary-bg-subtle),
+  "tertiary-subtle": var(--#{$prefix}tertiary-bg-subtle),
+  "success-subtle": var(--#{$prefix}success-bg-subtle),
+  "info-subtle": var(--#{$prefix}info-bg-subtle),
+  "warning-subtle": var(--#{$prefix}warning-bg-subtle),
+  "danger-subtle": var(--#{$prefix}danger-bg-subtle),
+  "light-subtle": var(--#{$prefix}light-bg-subtle),
+  "dark-subtle": var(--#{$prefix}dark-bg-subtle),
+  "blue-subtle": var(--#{$prefix}blue-bg-subtle),
+  "indigo-subtle": var(--#{$prefix}indigo-bg-subtle),
+  "purple-subtle": var(--#{$prefix}purple-bg-subtle),
+  "pink-subtle": var(--#{$prefix}pink-bg-subtle),
+  "red-subtle": var(--#{$prefix}red-bg-subtle),
+  "orange-subtle": var(--#{$prefix}orange-bg-subtle),
+  "yellow-subtle": var(--#{$prefix}yellow-bg-subtle),
+  "green-subtle": var(--#{$prefix}green-bg-subtle),
+  "teal-subtle": var(--#{$prefix}teal-bg-subtle),
+  "cyan-subtle": var(--#{$prefix}cyan-bg-subtle)
+) !default;
+// $utilities-bg-subtle-colors: map-loop($utilities-bg-subtle, rgba-css-var, "$key", "bg") !default;
+// scss-docs-end utilities-bg-colors
+
+// scss-docs-start utilities-border-colors
+$utilities-border: map-merge(
+  $utilities-colors,
+  (
+    "white": to-rgb($white)
+  )
+) !default;
+$utilities-border-colors: map-loop($utilities-border, rgba-css-var, "$key", "border") !default;
+
+$utilities-border-subtle: (
+  "primary-subtle": var(--#{$prefix}primary-border-subtle),
+  "secondary-subtle": var(--#{$prefix}secondary-border-subtle),
+  "tertiary-subtle": var(--#{$prefix}tertiary-border-subtle),
+  "success-subtle": var(--#{$prefix}success-border-subtle),
+  "info-subtle": var(--#{$prefix}info-border-subtle),
+  "warning-subtle": var(--#{$prefix}warning-border-subtle),
+  "danger-subtle": var(--#{$prefix}danger-border-subtle),
+  "light-subtle": var(--#{$prefix}light-border-subtle),
+  "dark-subtle": var(--#{$prefix}dark-border-subtle),
+  "blue-subtle": var(--#{$prefix}blue-border-subtle),
+  "indigo-subtle": var(--#{$prefix}indigo-border-subtle),
+  "purple-subtle": var(--#{$prefix}purple-border-subtle),
+  "pink-subtle": var(--#{$prefix}pink-border-subtle),
+  "red-subtle": var(--#{$prefix}red-border-subtle),
+  "orange-subtle": var(--#{$prefix}orange-border-subtle),
+  "yellow-subtle": var(--#{$prefix}yellow-border-subtle),
+  "green-subtle": var(--#{$prefix}green-border-subtle),
+  "teal-subtle": var(--#{$prefix}teal-border-subtle),
+  "cyan-subtle": var(--#{$prefix}cyan-border-subtle)
+) !default;
+// scss-docs-end utilities-border-colors
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
+
+$gutters: $spacers !default;

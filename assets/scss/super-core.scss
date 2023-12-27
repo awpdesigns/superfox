@@ -1,0 +1,27 @@
+// Import Atas Nalar Bootstrap Functions
+@import "../atasnalar-bootstrap/scss/functions";
+// Import Main Variables
+@import "super-variables";
+// Import Atas Nalar Bootstrap Core
+@import "../atasnalar-bootstrap/scss/atasnalar-bootstrap";
+// Import Main Core
+@import "core";
+@import "override";
+@import "color-subtle";
+@import "border-hover";
+// Import Header
+@import "header";
+// Import Main
+@import "main";
+// Import Footer
+@import "footer";
+// Import Scrollbar
+@import "scrollbar";
+// Import Backdrop Blur
+@import "backdrop-blur";
+// Import Client
+@import "client";
+// Import Project Page
+@import "project-page";
+// Import Pagination
+@import "pagination";

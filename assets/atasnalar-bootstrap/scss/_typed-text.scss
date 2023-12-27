@@ -1,0 +1,58 @@
+.typing-text {
+    position: relative;
+    overflow: hidden;
+    color: var(--#{$prefix}primary);
+
+    .typing {
+        position: relative;
+        font-size: $h2-font-size;
+        font-weight: $font-weight-semibold;
+
+        &.text-intro {
+            color: var(--#{$prefix}body-color);
+        }
+
+        &.text-value::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--#{$prefix}body-bg);
+            animation: animate steps(12) infinite;
+            animation-duration: var(--typing-time);
+        }
+
+        &.text-value.typing-border::before{
+            border-left: 2px solid;
+        }
+    }
+}
+
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+.an-typed {
+    min-height: 21px;
+
+    .an-typed-cursor {
+        font-weight: 300;
+        min-height: 21px;
+    }
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.blink, .an-typed-blink {
+    animation: blinker 1s linear infinite;
+    -webkit-animation: blinker 1s linear infinite;
+}

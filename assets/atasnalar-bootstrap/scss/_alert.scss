@@ -1,0 +1,134 @@
+//
+// Base styles
+//
+
+.alert {
+  // scss-docs-start alert-css-vars
+  --#{$prefix}alert-bg: transparent;
+  --#{$prefix}alert-padding-x: #{$alert-padding-x};
+  --#{$prefix}alert-padding-y: #{$alert-padding-y};
+  --#{$prefix}alert-margin-bottom: #{$alert-margin-bottom};
+  --#{$prefix}alert-color: inherit;
+  --#{$prefix}alert-border-color: transparent;
+  --#{$prefix}alert-border: #{$alert-border-width} solid var(--#{$prefix}alert-border-color);
+  --#{$prefix}alert-border-radius: #{$alert-border-radius};
+  --#{$prefix}alert-link-color: inherit;
+  // scss-docs-end alert-css-vars
+
+  position: relative;
+  padding: var(--#{$prefix}alert-padding-y) var(--#{$prefix}alert-padding-x);
+  margin-bottom: var(--#{$prefix}alert-margin-bottom);
+  color: var(--#{$prefix}alert-color);
+  background-color: var(--#{$prefix}alert-bg);
+  border: var(--#{$prefix}alert-border);
+  @include border-radius(var(--#{$prefix}alert-border-radius));
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  color: inherit;
+}
+
+// Provide class for links that match alerts
+.alert-link {
+  font-weight: $alert-link-font-weight;
+  color: var(--#{$prefix}alert-link-color);
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+  padding-right: $alert-dismissible-padding-r;
+
+  // Adjust close link position
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-y * 1.25 $alert-padding-x;
+  }
+}
+
+// Iconed alerts
+.alert-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 1.25rem 3rem;
+  border-radius: var(--#{$prefix}border-radius);
+
+  &::before {
+      position: absolute;
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: none;transform: ;msFilter:;"><path d="M19 13.586V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v3.586l-1.707 1.707A.996.996 0 0 0 3 16v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a.996.996 0 0 0-.293-.707L19 13.586zM19 17H5v-.586l1.707-1.707A.996.996 0 0 0 7 14v-4c0-2.757 2.243-5 5-5s5 2.243 5 5v4c0 .266.105.52.293.707L19 16.414V17zm-7 5a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22z"></path></svg>');
+      mask-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: auto;transform: ;msFilter:;"><path d="M19 13.586V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v3.586l-1.707 1.707A.996.996 0 0 0 3 16v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a.996.996 0 0 0-.293-.707L19 13.586zM19 17H5v-.586l1.707-1.707A.996.996 0 0 0 7 14v-4c0-2.757 2.243-5 5-5s5 2.243 5 5v4c0 .266.105.52.293.707L19 16.414V17zm-7 5a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22z"></path></svg>');
+      background-color: currentcolor;
+      font-size: 1.25rem;
+      margin-right: 0.75rem;
+      top: auto;
+      left: 0.75em;
+      line-height: .9;
+      text-rendering: auto;
+      display: inline-block;
+      text-transform: none;
+      speak-as: none;
+  }
+}
+
+/* === Alert AN Form === */
+.alert-an-form {
+  position: relative;
+  padding: 1rem;
+  border-radius: var(--#{$prefix}border-radius);
+  background: var(--#{$prefix}light-bg-subtle);
+  border: 1px solid currentColor;
+  color: var(--#{$prefix}light-text);
+  text-align: center;
+  margin-bottom: 1rem;
+
+  &.an-alert-success {
+      background: var(--#{$prefix}success-bg-subtle);
+      color: var(--#{$prefix}success-text);
+  }
+
+  &.an-alert-danger {
+      background: var(--#{$prefix}danger-bg-subtle);
+      color: var(--#{$prefix}danger-text);
+  }
+
+  &.an-alert-warning {
+      background: var(--#{$prefix}warning-bg-subtle);
+      color: var(--#{$prefix}warning-text);
+  }
+
+  &.an-alert-info {
+      background: var(--#{$prefix}info-bg-subtle);
+      color: var(--#{$prefix}info-text);
+  }
+}
+
+// scss-docs-start alert-modifiers
+// Generate contextual modifier classes for colorizing the alert
+@each $state in map-keys($colors) {
+  .alert-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text);
+  }
+}
+@each $state in map-keys($theme-colors) {
+  .alert-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text);
+  }
+}
+// scss-docs-end alert-modifiers

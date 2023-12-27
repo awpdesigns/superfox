@@ -1,0 +1,75 @@
+/* === New Class = Body Background, Body Color (Reversed) === */
+.body-bg {
+    background-color: var(--#{$prefix}body-bg) !important;
+}
+.body-color {
+    color: var(--#{$prefix}body-color) !important;
+}
+.text-body-bg {
+    color: var(--#{$prefix}body-bg) !important;
+}
+.text-body-color {
+    color: var(--#{$prefix}body-color) !important;
+}
+.bg-body-color {
+    background-color: var(--#{$prefix}body-color) !important;
+}
+.border-body-color {
+    border-color: var(--#{$prefix}body-color) !important;
+}
+.border-body-bg {
+    border-color: var(--#{$prefix}body-bg) !important;
+}
+
+/* === New Class = Gradient Background colors === */
+.bg-primary-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}primary) 40%, var(--#{$prefix}primary-400) 100%);
+}
+.bg-secondary-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}secondary) 40%, var(--#{$prefix}secondary-400) 100%);
+}
+.bg-tertiary-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}tertiary) 40%, var(--#{$prefix}tertiary-400) 100%);
+}
+.bg-success-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}success) 40%, var(--#{$prefix}success-400) 100%);
+}
+.bg-warning-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}warning) 40%, var(--#{$prefix}warning-400) 100%);
+}
+.bg-danger-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}danger) 40%, var(--#{$prefix}danger-400) 100%);
+}
+.bg-info-gradient {
+    background: linear-gradient(150deg, var(--#{$prefix}info) 40%, var(--#{$prefix}info-400) 100%);
+}
+
+/* === New Class = Subtle Hover colors === */
+.primary-subtle-hover:hover {
+    background: var(--#{$prefix}primary-bg-subtle) !important;
+    color: var(--#{$prefix}primary) !important;
+}
+.secondary-subtle-hover:hover {
+    background: var(--#{$prefix}secondary-bg-subtle) !important;
+    color: var(--#{$prefix}secondary) !important;
+}
+.tertiary-subtle-hover:hover {
+    background: var(--#{$prefix}tertiary-bg-subtle) !important;
+    color: var(--#{$prefix}tertiary) !important;
+}
+.success-subtle-hover:hover {
+    background: var(--#{$prefix}success-bg-subtle) !important;
+    color: var(--#{$prefix}success) !important;
+}
+.warning-subtle-hover:hover {
+    background: var(--#{$prefix}warning-bg-subtle) !important;
+    color: var(--#{$prefix}warning) !important;
+}
+.danger-subtle-hover:hover {
+    background: var(--#{$prefix}danger-bg-subtle) !important;
+    color: var(--#{$prefix}danger) !important;
+}
+.info-subtle-hover:hover {
+    background: var(--#{$prefix}info-bg-subtle) !important;
+    color: var(--#{$prefix}info) !important;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "atasnalar-bootstrap",
+  "version": "1.0.35",
+  "description": "This Sass is based on Bootstrap ^5.3.0.",
+  "main": "index.js",
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "scss",
+    "css",
+    "rtl",
+    "rtlcss",
+    "atasnalar",
+    "atasnalar-bootstrap"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "sass --no-source-map --load-path=node_modules scss:css",
+    "watch:sass": "sass --watch --no-source-map --load-path=node_modules scss:css",
+    "build:prefix": "autoprefixer css/*.css",
+    "watch:prefix": "autoprefixer --watch css/*.css",
+    "build:rtl": "rtlcss --config .rtlcssrc css/atasnalar-bootstrap.css css/atasnalar-bootstrap-rtl.css",
+    "watch:rtl": "rtlcss --config .rtlcssrc --watch css/atasnalar-bootstrap.css css/atasnalar-bootstrap-rtl.css",
+    "build": "npm-run-all build:*",
+    "watch": "npm-run-all watch:*",
+    "compress": "minify css/atasnalar-bootstrap.css > css/atasnalar-bootstrap.min.css && minify css/atasnalar-bootstrap-rtl.css > css/atasnalar-bootstrap-rtl.min.css && minify css/social-share.css > css/social-share.min.css && minify js/bootstrap.bundle.js > js/bootstrap.bundle.min.js && minify js/social-share.js > js/social-share.min.js && minify js/an-form.js > js/an-form.min.js",
+    "start": "npm-run-all build watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awpdesigns/atasnalar-bootstrap.git"
+  },
+  "author": "Atas Nalar <atasnalar@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "minify": "^9.1.0",
+    "rtlcss": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.8"
+  },
+  "bugs": {
+    "url": "https://github.com/awpdesigns/atasnalar-bootstrap/issues"
+  },
+  "homepage": "https://github.com/awpdesigns/atasnalar-bootstrap#readme"
+}

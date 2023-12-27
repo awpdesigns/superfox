@@ -1,0 +1,27 @@
+.an-navigation {
+    margin-top: 1rem; // 3rem
+
+    > nav > ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    > nav > ul > li * {
+        border-radius: var(--#{$prefix}border-radius);
+        min-width: 2.5rem;
+        text-align: center;
+    }
+
+    &.-right > nav > ul {
+        justify-content: flex-end;
+    }
+
+    &.-left > nav > ul {
+        justify-content: flex-start;
+    }
+
+    &.-center > nav > ul {
+        justify-content: center;
+    }
+}

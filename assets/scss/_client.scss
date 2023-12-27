@@ -1,0 +1,76 @@
+.super-client {
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    background: var(--#{$prefix}body-bg);
+    color: var(--#{$prefix}body-color);
+    border-top-left-radius: var(--#{$prefix}border-radius-xl);
+    margin-top: 1rem;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+    #client-title {
+        font-size: 1.35rem !important;
+    }
+    .swiper-container {
+        overflow: hidden;
+        .swiper-wrapper {
+            align-items: center;
+            .swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: fit-content;
+                    max-height: 60px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background: -webkit-radial-gradient(0% 0%, circle, rgba(255, 0, 0, 0) var(--#{$prefix}border-radius-xl), var(--#{$prefix}body-bg) var(--#{$prefix}border-radius-xl));
+        bottom: 100%;
+        right: 0;
+        width: var(--#{$prefix}border-radius-xl);
+        height: var(--#{$prefix}border-radius-xl);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background: -webkit-radial-gradient(0% 0%, circle, rgba(255, 0, 0, 0) var(--#{$prefix}border-radius-xl), var(--#{$prefix}body-bg) var(--#{$prefix}border-radius-xl));
+        bottom: 0;
+        right: 100%;
+        width: var(--#{$prefix}border-radius-xl);
+        height: var(--#{$prefix}border-radius-xl);
+    }
+}
+@media only screen and (min-width: 992px) {
+    .super-client {
+        position: absolute;
+        max-width: 600px;
+        padding: 2rem;
+        padding-bottom: 0;
+        margin-top: 0;
+
+        #client-title {
+            font-size: 1.15rem !important;
+        }
+    }
+
+    [data-#{$prefix}theme="dark"] .super-client .swiper-container .swiper-wrapper .swiper-slide {
+        img {
+            filter: invert(1) grayscale(1);
+            transition: filter 0.3s ease-in-out;
+
+            &:hover {
+                filter: invert(0) grayscale(0);
+            }
+        }
+    }
+}
