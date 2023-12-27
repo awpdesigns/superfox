@@ -298,7 +298,7 @@ if (isset($_POST[$an_submit])) {
 
 // Credentials Download
 $an_credential = 'an-credential';
-$file_credential = 'https://superfox.anv/uploads/SUPERFOX-SAGA---CREDENTIAL-2023-Share.pdf'; // Superfox Credential File
+$file_credential = 'https://awpdesigns.github.io/superfox/uploads/SUPERFOX-SAGA---CREDENTIAL-2023-Share.pdf'; // Superfox Credential File
 // If form is submitted
 if (isset($_POST[$an_credential])) {
     //! If bot are filled, die and reload page

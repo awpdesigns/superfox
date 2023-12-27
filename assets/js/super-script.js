@@ -1,4 +1,4 @@
-$.getScript('/assets/atasnalar-bootstrap/js/bootstrap.bundle.min.js');
+$.getScript('assets/atasnalar-bootstrap/js/bootstrap.bundle.min.js');
 // Check if jquery-form plugin is not exist in this page
 if (typeof jQuery.fn.ajaxForm === 'undefined') {
     // Import jquery-form plugin
@@ -1245,7 +1245,7 @@ function popUpVideo() {
         video.id = 'popup-video';
         video.className = 'popup-video';
         video.src = document.querySelector('.video-player source').src;
-        video.innerHTML = '<div class="video-backdrop"></div><div class="popup-video-container"><div class="popup-video-content"><button type="button" class="btn btn-icon btn-close" id="close-video"><i class="ri-close-fill"></i></button><video autoplay muted disablePictureInPicture controls controlsList="nodownload" playsinline class="video-player-popup" poster="/assets/img/screenshot.png" preload="metadata"><source src="' + video.src + '" type="video/mp4"></video></div></div>';
+        video.innerHTML = '<div class="video-backdrop"></div><div class="popup-video-container"><div class="popup-video-content"><button type="button" class="btn btn-icon btn-close" id="close-video"><i class="ri-close-fill"></i></button><video autoplay muted disablePictureInPicture controls controlsList="nodownload" playsinline class="video-player-popup" poster="assets/img/screenshot.png" preload="metadata"><source src="' + video.src + '" type="video/mp4"></video></div></div>';
         document.body.appendChild(video);
         // Unmute video
         document.querySelector('.video-player-popup').muted = false;
