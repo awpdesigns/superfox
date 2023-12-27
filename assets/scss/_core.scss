@@ -10,6 +10,10 @@ html.is-animating .transition-fade {
     // transform: translateY(-100%);
 }
 
+video[poster] {
+    object-fit: cover;
+}
+
 /* Content Wrap */
 [data-content-wrap] {
     background: var(--#{$prefix}body-bg);
