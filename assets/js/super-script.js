@@ -3482,6 +3482,12 @@ function uploadForm(e) {
 /*=================================================================
     SWUP Hooks
 ==================================================================*/
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 // ANShare on hooks
 swup.hooks.on('page:view', () => ANShare());
 swup.hooks.on('page:view', () => superfoxScript());
