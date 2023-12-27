@@ -1129,14 +1129,14 @@ function headerNavbar() {
                 $this.siblings().not('.active').toggleClass('opacity-25');
             });
         }
-        $(window).on('load resize', function () {
-            if (lgMax.matches) {
-                $this.on('click', function() {
-                    // Hide offcanvas bootstrap
-                    $('#super-header-menu').offcanvas('hide');
-                });
-            }
-        });
+        // $(window).on('load resize', function () {
+        //     if (lgMax.matches) {
+        //         $this.on('click', function() {
+        //             // Hide offcanvas bootstrap
+        //             $('#super-header-menu').offcanvas('hide');
+        //         });
+        //     }
+        // });
     });
     /* ======== Menu - Dropdown separator ======== */
     $('.menu-item.has-separator').each(function () {

@@ -322,9 +322,9 @@
     }
 }
 @media  only screen and (max-width: 767.98px) {
-    #super-data, #swup {
-        height: calc(100vh - 110px);
-    }
+    // #super-data, #swup {
+    //     height: calc(100vh - 110px);
+    // }
     #swup #highlight {
         flex-direction: column;
     }
