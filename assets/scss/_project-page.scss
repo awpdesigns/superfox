@@ -198,7 +198,7 @@
                 align-items: center;
                 gap: 0.5rem;
                 border-bottom: 1px solid var(--#{$prefix}light-bg-subtle);
-                z-index: 1;
+                z-index: 5;
 
                 * {
                     all: unset;
