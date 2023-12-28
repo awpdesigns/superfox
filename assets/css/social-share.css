@@ -17,6 +17,8 @@
     --facebook-bg: #c2deff;
     --twitter-color: #1da1f2;
     --twitter-bg: #c2e8ff;
+    --twitter-x-color: #1f1f1f;
+    --twitter-x-bg: #ffffff;
     --pinterest-color: #bd081c;
     --pinterest-bg: #ffc2c2;
     --linkedin-color: #1c3477;
@@ -181,6 +183,18 @@
     color: var(--social-share-text);
     fill: var(--social-share-text);
     background-color: var(--twitter-color);
+  }
+
+  #an-social-share [class^=an-share-][data-type=twitter]-x {
+    color: var(--twitter-x-color);
+    background-color: var(--twitter-x-bg);
+  }
+
+  #an-social-share [class^=an-share-][data-type=twitter-x]:hover,
+  #an-social-share [class^=an-share-][data-type=twitter-x]:focus {
+    color: var(--social-share-text);
+    fill: var(--social-share-text);
+    background-color: var(--twitter-x-color);
   }
 
   #an-social-share [class^=an-share-][data-type=pinterest] {
