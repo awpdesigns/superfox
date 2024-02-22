@@ -3606,69 +3606,42 @@ function uploadForm(e) {
 /*=================================================================
     SWUP Hooks
 ==================================================================*/
-swup.hooks.on('page:view', () => {
-	ANShare();
-	superfoxScript();
-
-	if ($('.an-popup-btn').length > 0) {
-		ANPopUp();
-	}
-
-	$('#super-header-menu').offcanvas('hide');
-
-	if ($('#back-to-top').length > 0) {
-		backToTop();
-	}
-
-	if ($('.swiper-container').length > 0) {
-		swiperContainer();
-	}
-
-	if ($('#menu-header-menu').length > 0) {
-		headerNavbar();
-	}
-
-	if ($('.video-player').length > 0) {
-		videoPlayer();
-	}
-
-	if ($('#btn-sound').length > 0 && $('.video-player').length > 0) {
-		videoSound();
-	}
-
-	if ($('#btn-fullscreen').length > 0 && $('.video-player').length > 0) {
-		videoFullscreen();
-	}
-
-	if ($('#play-video').length > 0) {
-		popUpVideo();
-	}
-
-	if ($('.an-count').length > 0) {
-		anCount();
-	}
-
-	if ($('.an-typed').length > 0) {
-		runTyped();
-	}
-
-	if ($('#projects').length > 0) {
-		projectGrid();
-	}
-
-	modalCareer();
-
-	if ($('#modal-career').length > 0 && $('#career-form').length > 0) {
-		showJobDetail();
-	}
-
-	ANModal();
-	credentialForm();
-
-	if ($('form').length > 0) {
-		ANForm();
-	}
-});
+// ANShare on hooks
+swup.hooks.on('page:view', () => ANShare());
+swup.hooks.on('page:view', () => superfoxScript());
+swup.hooks.on('page:view', () => ($('.an-popup-btn') ? ANPopUp() : ''));
+// Hide  Offcanvas on hooks
+swup.hooks.on('page:view', () => $('#super-header-menu').offcanvas('hide'));
+// Back to top on hooks
+swup.hooks.on('page:view', () => ($('#back-to-top').length > 0 ? backToTop() : ''));
+// Swiper Slider on hooks
+swup.hooks.on('page:view', () => ($('.swiper-container').length > 0 ? swiperContainer() : ''));
+// Header Navbar on hooks
+swup.hooks.on('page:view', () => ($('#menu-header-menu').length > 0 ? headerNavbar() : ''));
+// Video Player on hooks
+swup.hooks.on('page:view', () => ($('.video-player').length > 0 ? videoPlayer() : ''));
+// Video Sound on hooks
+swup.hooks.on('page:view', () => ($('#btn-sound').length > 0 && $('.video-player').length > 0 ? videoSound() : ''));
+// Video Fullscreen on hooks
+swup.hooks.on('page:view', () => ($('#btn-fullscreen').length > 0 && $('.video-player').length > 0 ? videoFullscreen() : ''));
+// Pop Up Video on hooks
+swup.hooks.on('page:view', () => ($('#play-video').length > 0 ? popUpVideo() : ''));
+// Counter on hooks
+swup.hooks.on('page:view', () => ($('.an-count').length > 0 ? anCount() : ''));
+// Typing Text on hooks
+swup.hooks.on('page:view', () => ($('.an-typed').length > 0 ? runTyped() : ''));
+// Projects Grid on hooks
+swup.hooks.on('page:view', () => ($('#projects').length > 0 ? projectGrid() : ''));
+// Modal Career on hooks
+swup.hooks.on('page:view', () => modalCareer());
+// Show Job Detail on hooks
+swup.hooks.on('page:view', () => ($('#modal-career').length > 0 && $('#career-form').length > 0 ? showJobDetail() : ''));
+// ANModal on hooks
+swup.hooks.on('page:view', () => ANModal());
+// credentialForm on hooks
+swup.hooks.on('page:view', () => credentialForm());
+// Run ANForm on hooks
+swup.hooks.on('page:view', () => ($('form').length > 0 ? ANForm() : ''));
 
 var bgColor = window.getComputedStyle(document.documentElement).getPropertyValue('--' + prefix + 'primary') || document.querySelector('meta[name=theme-color]').getAttribute('content') || '#ED7D31';
 window.console.log('%cSuperfox Saga', 'background: ' + bgColor + '; color: #ffffff; font-size: 10px; padding: 4px 8px; border-radius: 4px;', 'v1.0.0 by Atas Nalar');
